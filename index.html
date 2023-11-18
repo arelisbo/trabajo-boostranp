@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY8SY5L9aTDez3Gr4ZLlOc7aF94jvvIJJda5P1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+  
+     <!-- prueba barra navegacion -->
+      <nav class="navbar " >
+       <ul>
+        <li><a href="#">Categoria</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Supermercado</a></li>
+        <li><a href="#">Moda</a></li>
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fa-solid fa-cart-arrow-down fa-shake"></i>
+        <li id="cart-icon">
+            <span class="bi bi-cart"></span>
+            <span id="cart-count">0</span>
+        </li>
+       </ul>
+      </nav>
+      <div id="cart" class="container mt-3">
+        <h2>Carro compras</h2>
+    <ul id="cart-items" class="list-group"></ul>
+    <p>Total: $ <span id="cart-total">0.00</span></p>
+    <button id="checkout-btn" class="btn btn-primary">Finalizar compra</button>
+   <a href="/formulario.html"> <button class="btn btn-primary">Formulario</button></a>
+    </div>
+    <!-- comienso carrusel -->
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://media.istockphoto.com/id/1488907777/es/foto/el-concepto-de-uso-de-la-inteligencia-artificial-en-la-vida-cotidiana.jpg?s=1024x1024&w=is&k=20&c=Xhuqp3fXTymTjAX8ACthLAvRe9lQjAMS9vmS3TbJItA=" class="d-block w-100" alt="tecnologia">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.alkosto.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-195908303183-001.jpg?context=bWFzdGVyfGltYWdlc3w4MjM5OXxpbWFnZS9qcGVnfGFEVmhMMmcwTmk4eE16VTJPRFEzTmpRME5qYzFNQzgzTlRCWGVEYzFNRWhmYldGemRHVnlMMmh2ZEdadmJHUmxjaTkwY21GdWMyWmxjaTlwYm1OdmJXbHVaeTlrWlhCdmMybDBMMmg1WW5KcGN5MXBiblJsY21aaFkyVnpMMGxPTDIxbFpHbGhMM0J5YjJSMVkzUXZNVGsxT1RBNE16QXpNVGd6WHpBd01TNXFjR2N8YmUzMTQ1YmI3NGJiMjYxOGQ5MDVhMTgzMWEyM2E1MTQwZDM1N2RhMTk1OTBhYzg3ZmMzZTBjMTVlNDY0NmVhYQ" class="d-block w-100" alt="impresora">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.alkosto.com/medias/750Wx750H-master-hotfolder-transfer-incoming-deposit-hybris-interfaces-IN-media-product-4711081996255-001.jpg?context=bWFzdGVyfGltYWdlc3wzMDk0NTN8aW1hZ2UvanBlZ3xhR1prTDJobFpDOHhNemd6TnpZeU5UWTFOVE15Tmk4M05UQlhlRGMxTUVoZmJXRnpkR1Z5TDJodmRHWnZiR1JsY2k5MGNtRnVjMlpsY2k5cGJtTnZiV2x1Wnk5a1pYQnZjMmwwTDJoNVluSnBjeTFwYm5SbGNtWmhZMlZ6TDBsT0wyMWxaR2xoTDNCeWIyUjFZM1F2TkRjeE1UQTRNVGs1TmpJMU5WOHdNREV1YW5Cbnw0NmU5NzJkYjQ1OTdlZjJkMWZmMzlhN2M0ZDlhOWJmMTY1MjQyZmI0YzZmODkyMzM5YzA5NDdlY2Y5OTg3MDZk" class="d-block w-100" alt="computador">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> 
+      <!-- tarjetas de productos -->
+      <div class="container text-center padding-top">
+        <div class="row g-2">
+                <div class="col-4">
+                  <div class="p-3 border">   
+                      <img src="https://img.freepik.com/free-vector/brochure-with-three-smartphones-cyber-monday_23-2147575640.jpg?w=740&t=st=1700071617~exp=1700072217~hmc=14f8c01d8af2e2d1909102101f0091360a6bbe74110b88060438febc8ba2c169" class="card-img-top" alt="celulares">
+                      <div class="card-body">
+                        <h5 class="card-title">CYBER1</h5>
+                        <p class="card-text">PRECIO $5000</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="p-3 border">
+                    <img src="https://img.freepik.com/free-vector/mobile-tech-instagram-stories_23-2148810146.jpg?w=740&t=st=1700070608~exp=1700071208~hmac=efed7d1fe0bee15a822c71a63e0c686385a25379b3d653de58515b51805ff22e" class="card-img-top" alt="celular">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title2</h5>
+                      <p class="card-text">Some</p>
+                      <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                      </div>
+                  </div>
+                </div>
+              
+                    
+                <div class="col-4">
+                  <div class="p-3 border">
+                    <img src="https://img.freepik.com/free-psd/cyber-monday-sale-social-media-story-design-template_47987-17818.jpg?size=626&ext=jpg&uid=R125477347&ga=GA1.1.1031628302.1696270278&semt=ais" class="card-img-top" alt="audifonos">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title3</h5>
+                      <p class="card-text">PRECIO</p>
+                      <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="p-3 border">
+                    <img src="https://img.freepik.com/premium-psd/front-view-cyber-monday-sale-arrangement-mock-up_23-2148659812.jpg?w=900" class="card-img-top" alt="accesorios pc">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title3</h5>
+                    <p class="card-text">tarjeta4</p>
+                    <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-4">
+                  <div class="p-3 border">
+                    <img src="https://img.freepik.com/free-photo/sale-products-with-discount_23-2150296293.jpg?w=360&t=st=1700173977~exp=1700174577~hmac=218f18ab4a41c5ece73ff86704ec1f42d370ff15a4ba8e111ef23e9b1bed6e8f" class="card-img-top" alt="accesorios pc">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title4</h5> 
+                    <p class="card-text">PRECIO</p>
+                    <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                    </div>
+                 </div>
+                </div>
+                
+                <div class="col-4">
+                  <div class="p-3 border"><div class="card" style="width: 18rem;">
+                   <img src="https://img.freepik.com/free-psd/cyber-monday-super-sale-social-media-post-design-template_47987-17926.jpg?size=626&ext=jpg&uid=R125477347&ga=GA1.1.1031628302.1696270278&semt=ais" class="card-img-top" alt="ventilador pc">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title5</h5>
+                    <p class="card-text">precio</p>
+                    <button class="btn btn-primary add-to-cart-btn" data-name="Computador" data-price="500000">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+      <script src="java.js"></script> 
+</body>
+</html>
